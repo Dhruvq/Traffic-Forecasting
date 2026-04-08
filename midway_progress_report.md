@@ -19,8 +19,8 @@ To prepare the dataset for our baseline model, we implemented the following pipe
 2. **Temporal Feature Engineering**: Converted the `date_time` column to a datetime format and extracted `hour`, `day_of_week`, and `month` as categorical features to capture cyclicity.
 3. **Data Splitting**: We performed a time-series aware train/test split. The dataset was sorted chronologically, and the first 80% was used for training (38,563 samples), while the remaining 20% was set aside for testing (9,641 samples).
 4. **Encoding and Scaling**: 
-   - `StandardScaler` was applied to continuous features (`temp`, `rain_1h`, `snow_1h`, `clouds_all`).
-   - `OneHotEncoder` was applied to categorical/temporal features (`holiday`, `weather_main`, `hour`, `day_of_week`, `month`).
+   - `CustomStandardScaler` was applied to continuous features (`temp`, `rain_1h`, `snow_1h`, `clouds_all`).
+   - `CustomOneHotEncoder` was applied to categorical/temporal features (`holiday`, `weather_main`, `hour`, `day_of_week`, `month`).
 5. **Feature Filtering**: We dropped detailed textual descriptions such as `weather_description` in favor of the broader `weather_main` category to prevent feature explosion in the baseline model.
 
 ## 3. Initial Baseline Model Results
@@ -37,7 +37,7 @@ For our baseline, we trained a **Ridge Regression** model. This provides a stron
 
 **Challenges Faced**:
 1. **Dataset Delivery Changes**: The dataset was not accessible through the standard `ucimlrepo` API due to formatting choices in the source repository. This required us to write a custom extraction script that pulls the dataset zip directly and decompresses the `csv.gz` file on the fly.
-2. **Time-Series Split Leakage**: When working with standard scikit-learn random splits, we have to be extremely careful to avoid data leakage (using future data to predict the past). Implementing chronological splitting effectively mitigates this.
+2. **Time-Series Split Leakage**: When implementing our own data splitting logic, we had to be extremely careful to avoid data leakage (using future data to predict the past). Rather than relying on any library's random split utilities, we manually sorted the dataset chronologically and split by index to ensure strict temporal ordering.
 
 **How We Plan to Address Them (Next Steps)**:
 - **Implementation of FFNN**: We will start building the Feedforward Neural Network (Multi-Layer Perceptron), experimenting with non-linear activation functions (ReLU), and applying dropout and L2 weight decay to map out the non-linear boundaries.
