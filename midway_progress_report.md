@@ -11,7 +11,6 @@ The dataset contains 48,204 continuous hourly observations of traffic volume, we
 - **Traffic Volume Distribution**: The target variable ranges from 0 to over 7,000 vehicles per hour. The distribution is bimodal, indicating distinct high-traffic and low-traffic periods.
 - **Temporal Patterns**: Visualizing average traffic by the hour of the day revealed clear daily seasonality. Peaks typically occur during the morning rush hour (~7 AM) and evening rush hour (~4 PM - 5 PM), confirming the strong temporal dependence of the data. 
 
-*(EDA scripts and generated plots are available in the `src/` and `images/` directories respectively.)*
 
 ### Preprocessing Steps
 To prepare the dataset for our baseline model, we implemented the following pipeline:
