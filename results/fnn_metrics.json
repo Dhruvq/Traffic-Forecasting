@@ -1,0 +1,11 @@
+{
+  "hidden_layers": "[256, 128, 64]",
+  "lr": 0.001,
+  "dropout": 0.2,
+  "weight_decay": 0.001,
+  "val_rmse": 618.3041,
+  "test_rmse": 510.38,
+  "test_mae": 347.4247,
+  "test_mse": 260487.75,
+  "train_time_sec": 15.16
+}

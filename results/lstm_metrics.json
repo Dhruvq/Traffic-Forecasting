@@ -1,0 +1,12 @@
+{
+  "seq_len": 24,
+  "hidden_size": 64,
+  "num_layers": 1,
+  "dropout": 0.2,
+  "val_rmse": 683.1814,
+  "test_rmse": 481.5333,
+  "test_mae": 310.6631,
+  "test_mse": 231874.3438,
+  "train_time_sec": 271.88,
+  "n_test_preds": 4821
+}

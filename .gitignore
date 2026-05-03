@@ -190,6 +190,7 @@ cython_debug/
 
 # Ruff stuff:
 .ruff_cache/
+final_report.md
 
 # PyPI configuration file
 .pypirc

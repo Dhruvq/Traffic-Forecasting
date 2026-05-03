@@ -1,0 +1,7 @@
+{
+  "seq_len": 24,
+  "hidden_size": 64,
+  "num_layers": 1,
+  "dropout": 0.2,
+  "val_rmse": 683.1814363695781
+}

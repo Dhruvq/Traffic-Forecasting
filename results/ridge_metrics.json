@@ -1,0 +1,13 @@
+{
+  "config": "onehot",
+  "alpha": 100,
+  "train_rmse": 815.7568,
+  "val_rmse": 878.4452,
+  "test_rmse": 766.2733,
+  "test_mae": 572.1398,
+  "test_mse": 587174.7264,
+  "cv_mean_rmse": 866.6574,
+  "cv_std_rmse": 70.1045,
+  "train_time_sec": 0.0068,
+  "n_features": 70
+}
